@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\cancel.png" />
+    <None Remove="Assets\checked.png" />
+    <None Remove="Assets\Doctor.ico" />
+    <None Remove="Assets\hospital.ico" />
+    <None Remove="Assets\Hospital5.ico" />
+    <None Remove="Assets\Login.ico" />
+    <None Remove="Assets\Manager.ico" />
+    <None Remove="Assets\Nurse.ico" />
+    <None Remove="Assets\Roboto-Regular.ttf" />
+    <None Remove="Assets\sss.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.1" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.24" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.24">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="6.0.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\cancel.png" />
+    <Resource Include="Assets\checked.png" />
+    <Resource Include="Assets\Doctor.ico" />
+    <Resource Include="Assets\hospital.ico" />
+    <Resource Include="Assets\Hospital5.ico" />
+    <Resource Include="Assets\Login.ico" />
+    <Resource Include="Assets\Manager.ico" />
+    <Resource Include="Assets\Nurse.ico" />
+    <Resource Include="Assets\Roboto-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\sss.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Scaffold\" />
+  </ItemGroup>
+
+</Project>
