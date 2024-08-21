@@ -5,97 +5,105 @@ namespace Hospital.DataObjects
 {
     public partial class Surgery : INotifyPropertyChanged
     {
+       
         public int IdSurgery { get; set; }
 
-        private DateTime _date;
+      
+        private DateTime date;
         public DateTime Date
         {
-            get { return _date; }
+            get { return date; }
             set
             {
-                if (_date != value)
+                if (date != value)
                 {
-                    _date = value;
+                    date = value;
                     OnPropertyChanged(nameof(Date));
                 }
             }
         }
 
-        private string _notes = string.Empty;
+        
+        private string notes = string.Empty;
         public string Notes
         {
-            get { return _notes; }
+            get { return notes; }
             set
             {
-                if (_notes != value)
+                if (notes != value)
                 {
-                    _notes = value;
+                    notes = value;
                     OnPropertyChanged(nameof(Notes));
                 }
             }
         }
 
-        private int _doctorId;
+       
+        private int doctorId;
         public int DoctorId
         {
-            get { return _doctorId; }
+            get { return doctorId; }
             set
             {
-                if (_doctorId != value)
+                if (doctorId != value)
                 {
-                    _doctorId = value;
+                    doctorId = value;
                     OnPropertyChanged(nameof(DoctorId));
                 }
             }
         }
 
-        private int _patientId;
+       
+        private int patientId;
         public int PatientId
         {
-            get { return _patientId; }
+            get { return patientId; }
             set
             {
-                if (_patientId != value)
+                if (patientId != value)
                 {
-                    _patientId = value;
+                    patientId = value;
                     OnPropertyChanged(nameof(PatientId));
                 }
             }
         }
 
-        private Doctor _doctor = null!;
+       
+        private Doctor doctor = null!;
         public virtual Doctor Doctor
         {
-            get { return _doctor; }
+            get { return doctor; }
             set
             {
-                if (_doctor != value)
+                if (doctor != value)
                 {
-                    _doctor = value;
+                    doctor = value;
                     OnPropertyChanged(nameof(Doctor));
                 }
             }
         }
 
-        private Patient _patient = null!;
+       
+        private Patient patient = null!;
         public virtual Patient Patient
         {
-            get { return _patient; }
+            get { return patient; }
             set
             {
-                if (_patient != value)
+                if (patient != value)
                 {
-                    _patient = value;
+                    patient = value;
                     OnPropertyChanged(nameof(Patient));
                 }
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

@@ -16,6 +16,7 @@ namespace Hospital.DataObjects
 
         public int Id { get; set; }
 
+        
         public string Name
         {
             get { return _name; }
@@ -29,6 +30,7 @@ namespace Hospital.DataObjects
             }
         }
 
+        
         public string Surname
         {
             get { return _surname; }
@@ -41,6 +43,7 @@ namespace Hospital.DataObjects
                 }
             }
         }
+
 
         public string Contact
         {
@@ -55,6 +58,7 @@ namespace Hospital.DataObjects
             }
         }
 
+        
         public string Username
         {
             get { return _username; }
@@ -68,13 +72,18 @@ namespace Hospital.DataObjects
             }
         }
 
+
         public string Password { get; set; } = null!;
 
+
         public string Theme { get; set; } = null!;
+
+
         public string Language { get; set; } = null!;
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

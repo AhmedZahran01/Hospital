@@ -37,7 +37,7 @@ namespace Hospital.XAML.Pages
         {
             Button button = (Button)sender;
 
-            Appointment appointment = (Appointment)button.DataContext;
+            Appointments appointment = (Appointments)button.DataContext;
 
             if (appointment != null)
             {
@@ -51,7 +51,7 @@ namespace Hospital.XAML.Pages
         {
             Button button = (Button)sender;
 
-            Appointment appointment = (Appointment)button.DataContext;
+            Appointments appointment = (Appointments)button.DataContext;
 
             if (appointment != null)
             {
@@ -64,9 +64,9 @@ namespace Hospital.XAML.Pages
             }
         }
 
-        private ObservableCollection<Appointment> UpdateTable()
+        private ObservableCollection<Appointments> UpdateTable()
         {
-            ObservableCollection<Appointment> appointments;
+            ObservableCollection<Appointments> appointments;
             if (UserContext.CurrentUserType == UserType.NURSE)
             {
                 appointments = new(AppointmentsService.GetAll());
@@ -81,8 +81,8 @@ namespace Hospital.XAML.Pages
 
         private void textBoxFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            List<Appointment> newCollection = new List<Appointment>();
-            IEnumerable<Appointment> objects = (IEnumerable<Appointment>)UpdateTable();
+            List<Appointments> newCollection = new List<Appointments>();
+            IEnumerable<Appointments> objects = (IEnumerable<Appointments>)UpdateTable();
             foreach (var obj in objects)
             {
                 string filter = textBoxFilter.Text.ToLower();

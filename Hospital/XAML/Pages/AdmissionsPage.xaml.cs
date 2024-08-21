@@ -47,7 +47,7 @@ namespace Hospital.XAML.Pages
         {
             Button button = (Button)sender;
 
-            Admission admission = (Admission)button.DataContext;
+            Admissions admission = (Admissions)button.DataContext;
 
             if (admission != null)
             {
@@ -61,7 +61,7 @@ namespace Hospital.XAML.Pages
         {
             Button button = (Button)sender;
 
-            Admission admission = (Admission)button.DataContext;
+            Admissions admission = (Admissions)button.DataContext;
 
             if (admission != null)
             {
@@ -74,9 +74,9 @@ namespace Hospital.XAML.Pages
             }
         }
 
-        private ObservableCollection<Admission> UpdateTable()
+        private ObservableCollection<Admissions> UpdateTable()
         {
-            ObservableCollection<Admission> admissions = new(AdmissionsService.GetAll());
+            ObservableCollection<Admissions> admissions = new(AdmissionsService.GetAll());
 
             DataGrid.ItemsSource = admissions;
             return admissions;
@@ -84,8 +84,8 @@ namespace Hospital.XAML.Pages
 
         private void textBoxFilter_TextChanged(object sender, TextChangedEventArgs e)
         {
-            List<Admission> newCollection = new List<Admission>();
-            IEnumerable<Admission> objects = (IEnumerable<Admission>)UpdateTable();
+            List<Admissions> newCollection = new List<Admissions>();
+            IEnumerable<Admissions> objects = (IEnumerable<Admissions>)UpdateTable();
             foreach (var obj in objects)
             {
                 string filter = textBoxFilter.Text.ToLower();

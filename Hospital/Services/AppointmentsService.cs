@@ -14,7 +14,7 @@ namespace Hospital.Services
             _context = new hospitalContext();
         }
 
-        public IEnumerable<Appointment> GetAll()
+        public IEnumerable<Appointments> GetAll()
         {
             return _context.Appointments
                 .Include(a => a.Doctor)
@@ -23,7 +23,7 @@ namespace Hospital.Services
                 .ToList();
         }
 
-        public IEnumerable<Appointment> GetAllByDoctor(int doctorId)
+        public IEnumerable<Appointments> GetAllByDoctor(int doctorId)
         {
             return _context.Appointments
                 .Where(a => a.DoctorId == doctorId)
@@ -32,13 +32,13 @@ namespace Hospital.Services
                 .ToList();
         }
 
-        public void Add(Appointment newAppointment)
+        public void Add(Appointments newAppointment)
         {
             _context.Appointments.Add(newAppointment);
             _context.SaveChanges();
         }
 
-        public void Update(Appointment updatedAppointment)
+        public void Update(Appointments updatedAppointment)
         {
             var existingAppointment = _context.Appointments.Find(updatedAppointment.Id);
 

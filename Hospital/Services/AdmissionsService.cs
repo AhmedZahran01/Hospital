@@ -17,7 +17,7 @@ namespace Hospital.Services
             _context = new();
         }
 
-        public IEnumerable<Admission> GetAll()
+        public IEnumerable<Admissions> GetAll()
         {
             return _context.Admissions
                 .Include(a => a.Patient)
@@ -25,13 +25,13 @@ namespace Hospital.Services
                 .ToList();
         }
 
-        public void Add(Admission newAdmission)
+        public void Add(Admissions newAdmission)
         {
             _context.Admissions.Add(newAdmission);
             _context.SaveChanges();
         }
 
-        public void Update(Admission updatedAdmission)
+        public void Update(Admissions updatedAdmission)
         {
             var existingAdmission = _context.Admissions.Find(updatedAdmission.Id);
 

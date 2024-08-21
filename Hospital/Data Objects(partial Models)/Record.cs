@@ -5,112 +5,121 @@ namespace Hospital.DataObjects
 {
     public partial class Record : INotifyPropertyChanged
     {
+       
         public int Id { get; set; }
 
-        private int _doctorId;
+       
+        private int doctorId;
         public int DoctorId
         {
-            get { return _doctorId; }
+            get { return doctorId; }
             set
             {
-                if (_doctorId != value)
+                if (doctorId != value)
                 {
-                    _doctorId = value;
+                    doctorId = value;
                     OnPropertyChanged(nameof(DoctorId));
                 }
             }
         }
 
-        private int _patientId;
+       
+        private int patientId;
         public int PatientId
         {
-            get { return _patientId; }
+            get { return patientId; }
             set
             {
-                if (_patientId != value)
+                if (patientId != value)
                 {
-                    _patientId = value;
+                    patientId = value;
                     OnPropertyChanged(nameof(PatientId));
                 }
             }
         }
 
-        private DateTime _date;
+       
+        private DateTime date;
         public DateTime Date
         {
-            get { return _date; }
+            get { return date; }
             set
             {
-                if (_date != value)
+                if (date != value)
                 {
-                    _date = value;
+                    date = value;
                     OnPropertyChanged(nameof(Date));
                 }
             }
         }
 
-        private string _diagnosis = string.Empty; //تشخبص   diagnosis  
+       
+        private string diagnosis = string.Empty; //تشخبص   diagnosis  
         public string Diagnosis
         {
-            get { return _diagnosis; }
+            get { return diagnosis; }
             set
             {
-                if (_diagnosis != value)
+                if (diagnosis != value)
                 {
-                    _diagnosis = value;
+                    diagnosis = value;
                     OnPropertyChanged(nameof(Diagnosis));
                 }
             }
         }
 
-        private string _prescription = string.Empty; //روشتة Prescription 
+    
+        private string prescription = string.Empty; //روشتة Prescription 
         public string Prescription
         {
-            get { return _prescription; }
+            get { return prescription; }
             set
             {
-                if (_prescription != value)
+                if (prescription != value)
                 {
-                    _prescription = value;
+                    prescription = value;
                     OnPropertyChanged(nameof(Prescription));
                 }
             }
         }
 
-        private Doctor _doctor = null!;
+        
+        private Doctor doctor = null!;
         public virtual Doctor Doctor
         {
-            get { return _doctor; }
+            get { return doctor; }
             set
             {
-                if (_doctor != value)
+                if (doctor != value)
                 {
-                    _doctor = value;
+                    doctor = value;
                     OnPropertyChanged(nameof(Doctor));
                 }
             }
         }
 
-        private Patient _patient = null!;
+        
+        private Patient patient = null!;
         public virtual Patient Patient
         {
-            get { return _patient; }
+            get { return patient; }
             set
             {
-                if (_patient != value)
+                if (patient != value)
                 {
-                    _patient = value;
+                    patient = value;
                     OnPropertyChanged(nameof(Patient));
                 }
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     
     }
 }

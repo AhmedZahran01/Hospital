@@ -25,7 +25,7 @@ namespace Hospital.XAML.CreateWindows
         private AppointmentsService AppointmentsService = new();
         private PatientService PatientService = new();
         private DoctorService DoctorService = new();
-        private Appointment? Appointment = null;
+        private Appointments? Appointment = null;
 
         public CreateAppointmentWindow()
         {
@@ -42,7 +42,7 @@ namespace Hospital.XAML.CreateWindows
             }
         }
 
-        public CreateAppointmentWindow(Appointment appointment)
+        public CreateAppointmentWindow(Appointments appointment)
         {
             InitializeComponent();
 
@@ -79,7 +79,7 @@ namespace Hospital.XAML.CreateWindows
 
             if (Appointment == null)
             {
-                AppointmentsService.Add(new Appointment { Date = (DateTime)appointmentDate, DoctorId = doctor.Id, PatientId = patient.Id });
+                AppointmentsService.Add(new Appointments { Date = (DateTime)appointmentDate, DoctorId = doctor.Id, PatientId = patient.Id });
                 new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
                 this.Close();
             }

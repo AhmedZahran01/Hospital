@@ -25,14 +25,14 @@ namespace Hospital.XAML.CreateWindows
     {
         private AdmissionsService AdmissionsService = new();
         private PatientService PatientService = new();
-        private Admission? Admission = null;
+        private Admissions? Admission = null;
         public CreateAdmissionWindow()
         {
             InitializeComponent();
             GetPatientsAndPopulateComboBox();
         }
 
-        public CreateAdmissionWindow(Admission admission)
+        public CreateAdmissionWindow(Admissions admission)
         {
             InitializeComponent();
             GetPatientsAndPopulateComboBox();
@@ -61,7 +61,7 @@ namespace Hospital.XAML.CreateWindows
 
             if (Admission == null)
             {
-                AdmissionsService.Add(new Admission 
+                AdmissionsService.Add(new Admissions 
                                    { EntryDate = (DateTime)admissionDate, ExitDate = (DateTime)
                                      dischargeDate, PatientId = patient.Id });
                 new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();

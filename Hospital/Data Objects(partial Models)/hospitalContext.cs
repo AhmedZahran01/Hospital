@@ -22,8 +22,8 @@ namespace Hospital.DataObjects
 
       #region  Db Sets Region
 
-        public virtual DbSet<Admission> Admissions { get; set; } = null!;
-        public virtual DbSet<Appointment> Appointments { get; set; } = null!;
+        public virtual DbSet<Admissions> Admissions { get; set; } = null!;
+        public virtual DbSet<Appointments> Appointments { get; set; } = null!;
         public virtual DbSet<Doctor> Doctors { get; set; } = null!;
         public virtual DbSet<Item> Items { get; set; } = null!;
         public virtual DbSet<Manager> Managers { get; set; } = null!;
@@ -61,7 +61,7 @@ namespace Hospital.DataObjects
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admission>(entity =>
+            modelBuilder.Entity<Admissions>(entity =>
             {
                 entity.ToTable("admission");
 
@@ -86,7 +86,7 @@ namespace Hospital.DataObjects
                     .HasConstraintName("fk_Admission_Patient1");
             });
 
-            modelBuilder.Entity<Appointment>(entity =>
+            modelBuilder.Entity<Appointments>(entity =>
             {
                 entity.ToTable("appointment");
 

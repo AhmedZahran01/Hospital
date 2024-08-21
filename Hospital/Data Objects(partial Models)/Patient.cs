@@ -8,102 +8,114 @@ namespace Hospital.DataObjects
    
     public partial class Patient : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Patient()
         {
-            Admissions = new HashSet<Admission>();
-            Appointments = new HashSet<Appointment>();
+            Admissions = new HashSet<Admissions>();
+            Appointments = new HashSet<Appointments>();
             Records = new HashSet<Record>();
             Surgeries = new HashSet<Surgery>();
         }
 
+       
         public int Id { get; set; }
 
-        private string _name = string.Empty;
+
+        private string name = string.Empty;
         public string Name
         {
-            get { return _name; }
+            get { return name; }
             set
             {
-                if (_name != value)
+                if (name != value)
                 {
-                    _name = value;
+                    name = value;
                     OnPropertyChanged(nameof(Name));
                 }
             }
         }
 
-        private string _surname = string.Empty;
+
+        private string surname = string.Empty;
         public string Surname
         {
-            get { return _surname; }
+            get { return surname; }
             set
             {
-                if (_surname != value)
+                if (surname != value)
                 {
-                    _surname = value;
+                    surname = value;
                     OnPropertyChanged(nameof(Surname));
                 }
             }
         }
 
-        private string _contact = string.Empty;
+       
+        
+        private string contact = string.Empty;
         public string Contact
         {
-            get { return _contact; }
+            get { return contact; }
             set
             {
-                if (_contact != value)
+                if (contact != value)
                 {
-                    _contact = value;
+                    contact = value;
                     OnPropertyChanged(nameof(Contact));
                 }
             }
         }
 
-        private string _address = string.Empty;
+
+
+        private string address = string.Empty;
         public string Address
         {
-            get { return _address; }
+            get { return address; }
             set
             {
-                if (_address != value)
+                if (address != value)
                 {
-                    _address = value;
+                    address = value;
                     OnPropertyChanged(nameof(Address));
                 }
             }
         }
 
          
-        private DateTime _birthDate;
+        private DateTime birthDate;
         public DateTime BirthDate
         {
-            get { return _birthDate; }
+            get { return birthDate; }
             set
             {
-                if (_birthDate != value)
+                if (birthDate != value)
                 {
-                    _birthDate = value;
+                    birthDate = value;
                     OnPropertyChanged(nameof(BirthDate));
                 }
             }
         }
 
-        public virtual ICollection<Admission> Admissions { get; set; }
-        public virtual ICollection<Appointment> Appointments { get; set; }
+
+        public virtual ICollection<Admissions> Admissions { get; set; }
+        public virtual ICollection<Appointments> Appointments { get; set; }
         public virtual ICollection<Record> Records { get; set; }
         public virtual ICollection<Surgery> Surgeries { get; set; }
 
+
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        
+        
         public override string ToString()
         {
             return $"{Name} {Surname} ({Contact})";
         }
+   
     }
 }

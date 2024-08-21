@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Hospital.DataObjects
 {
-    public partial class Admission : INotifyPropertyChanged  // Admission  قبول    ,
+    public partial class Admissions : INotifyPropertyChanged  // Admission  قبول    ,
     {
        
         public int Id { get; set; }
