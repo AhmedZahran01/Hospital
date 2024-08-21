@@ -8,8 +8,9 @@ namespace Hospital.DataObjects
 {
     public partial class hospitalContext : DbContext
     {
+    
       #region Constractors Region
-
+         
         public hospitalContext()
         {
         }
@@ -19,45 +20,58 @@ namespace Hospital.DataObjects
         {
         } 
       #endregion
-
+         
+     
       #region  Db Sets Region
 
-        public virtual DbSet<Admissions> Admissions { get; set; } = null!;
-        public virtual DbSet<Appointments> Appointments { get; set; } = null!;
-        public virtual DbSet<Doctor> Doctors { get; set; } = null!;
-        public virtual DbSet<Item> Items { get; set; } = null!;
-        public virtual DbSet<Manager> Managers { get; set; } = null!;
-        public virtual DbSet<Nurse> Nurses { get; set; } = null!;
-        public virtual DbSet<Patient> Patients { get; set; } = null!;
-        public virtual DbSet<Record> Records { get; set; } = null!;
-        public virtual DbSet<Surgery> Surgeries { get; set; } = null!; 
-      
-      #endregion
+          
+        public virtual DbSet<Admissions>     Admissions   { get; set; } = null!;
+        public virtual DbSet<Appointments>   Appointments { get; set; } = null!;
+        public virtual DbSet<Doctor>         Doctors      { get; set; } = null!;
+        public virtual DbSet<Item>           Items        { get; set; } = null!;
+        public virtual DbSet<Manager>        Managers     { get; set; } = null!;
+        public virtual DbSet<Nurse>          Nurses       { get; set; } = null!;
+        public virtual DbSet<Patient>        Patients     { get; set; } = null!;
+        public virtual DbSet<Record>         Records      { get; set; } = null!;
+        public virtual DbSet<Surgery>        Surgeries    { get; set; } = null!;
 
+        #endregion
+     
+        
+      #region On Configuring Region
+    
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+                optionsBuilder.UseMySQL
+                 ("server=localhost;database=hospital;uid=root;pwd=new_password;");
+
+
+
                 #region Comment For Sql Server Provider
 
-                     //string connectionString = ConfigurationManager.ConnectionStrings
-                     //  ["HospitalDatabase"].ConnectionString;
-                     
-                     //if (String.IsNullOrEmpty(connectionString))
-                     //{
-                     //    throw new InvalidOperationException
-                     //    ("Connection string not found in App.config");
-                     //}
-                     
-                     //optionsBuilder.UseMySQL("server=Mysql@localhost:3306
-                     //    ;database=hospital;uid=root;pwd=new_password;");
+                //string connectionString = ConfigurationManager.ConnectionStrings
+                //  ["HospitalDatabase"].ConnectionString;
+
+                //if (String.IsNullOrEmpty(connectionString))
+                //{
+                //    throw new InvalidOperationException
+                //    ("Connection string not found in App.config");
+                //}
+
+
 
                 #endregion
-                optionsBuilder.UseMySQL("server=localhost;database=hospital;uid=root;pwd=new_password;");
-
             }
 
         }
+
+      #endregion
+
+
+      #region On On Model Creating Region
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -346,8 +360,11 @@ namespace Hospital.DataObjects
             OnModelCreatingPartial(modelBuilder);
         }
 
+
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-  
-    
+
+       #endregion
+ 
+
     }
 }

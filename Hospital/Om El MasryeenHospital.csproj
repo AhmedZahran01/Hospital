@@ -49,7 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Scaffold\" />
+    <Folder Include="Poco Class Models%28partial Models%29\" />
   </ItemGroup>
 
 </Project>

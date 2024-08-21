@@ -14,12 +14,12 @@ namespace Hospital.Scaffold
             Surgeries = new HashSet<Surgery>();
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public string Surname { get; set; } = null!;
-        public string Contact { get; set; } = null!;
-        public string Address { get; set; } = null!;
-        public DateTime BirthDate { get; set; }
+        public int         Id         { get; set; }
+        public string      Name       { get; set; } = null!;
+        public string      Surname    { get; set; } = null!;
+        public string      Contact    { get; set; } = null!;
+        public string      Address    { get; set; } = null!;
+        public DateTime    BirthDate  { get; set; }
 
         public virtual ICollection<Admission> Admissions { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
