@@ -17,4 +17,5 @@ namespace Hospital.Utils
     {
         public static UserType CurrentUserType { get; set; }
     }
+
 }
