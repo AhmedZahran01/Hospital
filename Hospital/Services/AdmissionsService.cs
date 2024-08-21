@@ -21,7 +21,7 @@ namespace Hospital.Services
         {
             return _context.Admissions
                 .Include(a => a.Patient)
-                .OrderBy(a => a.AdmissionDate)
+                .OrderBy(a => a.EntryDate)
                 .ToList();
         }
 
@@ -37,8 +37,8 @@ namespace Hospital.Services
 
             if (existingAdmission != null)
             {
-                existingAdmission.AdmissionDate = updatedAdmission.AdmissionDate;
-                existingAdmission.DischargeDate = updatedAdmission.DischargeDate;
+                existingAdmission.EntryDate = updatedAdmission.EntryDate;
+                existingAdmission.ExitDate = updatedAdmission.ExitDate;
                 existingAdmission.PatientId = updatedAdmission.PatientId;
 
                 _context.SaveChanges();

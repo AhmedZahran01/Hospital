@@ -37,8 +37,8 @@ namespace Hospital.XAML.CreateWindows
             InitializeComponent();
             GetPatientsAndPopulateComboBox();
 
-            DatePickerAdmissionField.Value = admission.AdmissionDate;
-            DatePickerDischargeField.Value = admission.DischargeDate;
+            DatePickerAdmissionField.Value = admission.EntryDate;
+            DatePickerDischargeField.Value = admission.ExitDate;
             cb_Patient.SelectedItem = cb_Patient.Items.OfType<Patient>().FirstOrDefault(patient => patient.Id == admission.Patient.Id);
 
             Admission = admission;
@@ -62,15 +62,15 @@ namespace Hospital.XAML.CreateWindows
             if (Admission == null)
             {
                 AdmissionsService.Add(new Admission 
-                                   { AdmissionDate = (DateTime)admissionDate, DischargeDate = (DateTime)
+                                   { EntryDate = (DateTime)admissionDate, ExitDate = (DateTime)
                                      dischargeDate, PatientId = patient.Id });
                 new SuccessWindow(LangHelper.GetString("SuccessCreated")).ShowDialog();
                 this.Close();
             }
             else
             {
-                Admission.AdmissionDate = (DateTime)admissionDate;
-                Admission.DischargeDate = (DateTime)dischargeDate;
+                Admission.EntryDate = (DateTime)admissionDate;
+                Admission.ExitDate = (DateTime)dischargeDate;
                 Admission.PatientId = patient.Id;
 
                 AdmissionsService.Update(Admission);

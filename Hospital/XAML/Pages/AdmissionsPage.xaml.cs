@@ -90,7 +90,7 @@ namespace Hospital.XAML.Pages
             {
                 string filter = textBoxFilter.Text.ToLower();
                 if (obj.Patient.Name.ToLower().Contains(filter) || obj.Patient.Surname.ToLower().Contains(filter) || obj.Patient.Contact.Contains(filter)
-                    || obj.AdmissionDate.ToString().ToLower().Contains(filter) || obj.DischargeDate.ToString().ToLower().Contains(filter))
+                    || obj.EntryDate.ToString().ToLower().Contains(filter) || obj.ExitDate.ToString().ToLower().Contains(filter))
                     newCollection.Add(obj);
             }
             DataGrid.ItemsSource = newCollection;

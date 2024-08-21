@@ -5,36 +5,41 @@ namespace Hospital.DataObjects
 {
     public partial class Admission : INotifyPropertyChanged  // Admission  قبول    ,
     {
+       
         public int Id { get; set; }
 
-        private DateTime _admissionDate;
-        public DateTime AdmissionDate
+       
+        private DateTime entryDate;
+        public DateTime EntryDate
         {
-            get { return _admissionDate; }
+            get { return entryDate; }
             set
             {
-                if (_admissionDate != value)
+                if (entryDate != value)
                 {
-                    _admissionDate = value;
-                    OnPropertyChanged(nameof(AdmissionDate));
+                    entryDate = value;
+                    OnPropertyChanged(nameof(EntryDate));
                 }
             }
         }
 
-        private DateTime _dischargeDate; //تاريخ التفريغ
+      
 
-        public DateTime DischargeDate
+        private DateTime exitDate; //تاريخ الخروج
+        public DateTime ExitDate
         {
-            get { return _dischargeDate; }
+            get { return exitDate; }
             set
             {
-                if (_dischargeDate != value)
+                if (exitDate != value)
                 {
-                    _dischargeDate = value;
-                    OnPropertyChanged(nameof(DischargeDate));
+                    exitDate = value;
+                    OnPropertyChanged(nameof(ExitDate));
                 }
             }
         }
+
+
 
         private int _patientId;
         public int PatientId
@@ -50,6 +55,8 @@ namespace Hospital.DataObjects
             }
         }
 
+        
+        
         private Patient _patient = null!;
         public virtual Patient Patient
         {
@@ -64,11 +71,14 @@ namespace Hospital.DataObjects
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+   
+    
     }
 }

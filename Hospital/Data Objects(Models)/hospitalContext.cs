@@ -69,11 +69,11 @@ namespace Hospital.DataObjects
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.AdmissionDate)
+                entity.Property(e => e.EntryDate)
                     .HasColumnType("datetime")
                     .HasColumnName("admission_date");
 
-                entity.Property(e => e.DischargeDate)
+                entity.Property(e => e.ExitDate)
                     .HasColumnType("datetime")
                     .HasColumnName("discharge_date");
 
