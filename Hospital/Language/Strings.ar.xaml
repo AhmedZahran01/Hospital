@@ -6,7 +6,6 @@
     <system:String x:Key="ChangePassword">تغيير كلمة المرور</system:String>
     <system:String x:Key="DarkTheme">الوضع الداكن</system:String>
     <system:String x:Key="Doctor">طبيب</system:String>
-    <system:String x:Key="English">الإنجليزية</system:String>
     <system:String x:Key="ErrorEmptyFields">الحقول المطلوبة لا يمكن أن تكون فارغة!</system:String>
     <system:String x:Key="ErrorUsernameAlreadyExists">اسم المستخدم موجود بالفعل! اختر اسمًا آخر.</system:String>
     <system:String x:Key="ErrorUpdated">فشل في الحفظ!</system:String>
@@ -29,7 +28,6 @@
     <system:String x:Key="Register">تسجيل</system:String>
     <system:String x:Key="RegisterTitle">التسجيل</system:String>
     <system:String x:Key="Save">حفظ</system:String>
-    <system:String x:Key="Serbian">العربية</system:String>
     <system:String x:Key="SettingsSidebar">الإعدادات</system:String>
     <system:String x:Key="SuccessNewRegistration">تم إنشاء المستخدم بنجاح!</system:String>
     <system:String x:Key="SuccessUpdated">تم التحديث بنجاح!</system:String>
@@ -88,6 +86,10 @@
     <system:String x:Key="Addanewitem">إضافة عنصر جديد</system:String>
     <system:String x:Key="DatesDetails">السجلات</system:String>
     <system:String x:Key="error">AA </system:String>
+    
+    <system:String x:Key="FRANCE">الفرنسية</system:String>
+    <system:String x:Key="English">الإنجليزية</system:String>
+    <system:String x:Key="Arabic">العربية</system:String>
 
 
 

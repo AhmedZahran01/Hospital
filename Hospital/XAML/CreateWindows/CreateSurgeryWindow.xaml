@@ -20,7 +20,7 @@
                 <ResourceDictionary Source="../../Styles/TextBoxStyles.xaml"/>
                 <ResourceDictionary Source="../../Styles/TextBlockStyles.xaml"/>
                 <ResourceDictionary Source="../../Language/Strings.en.xaml"/>
-                <ResourceDictionary Source="../../Language/Strings.sr.xaml"/>
+                <ResourceDictionary Source="../../Language/Strings.ar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>

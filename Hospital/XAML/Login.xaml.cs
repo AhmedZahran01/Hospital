@@ -10,7 +10,7 @@ namespace Hospital
     public partial class Login : Window
     {
         private AuthService AuthService = new();
-
+        
         public Login()
         {
             LangHelper.SwitchLanguage("en");

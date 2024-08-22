@@ -27,7 +27,7 @@ namespace Hospital.Services
                 Username = username,
                 Password = password,
                 Theme = "Dark",
-                Language = "SR"
+                Language = "ar"
             };
 
             HospitalContext.Doctors.Add(newDoctor);
@@ -53,7 +53,7 @@ namespace Hospital.Services
                 Username = username,
                 Password = password,
                 Theme = "Dark",
-                Language = "SR"
+                Language = "ar"
             };
 
 
@@ -79,7 +79,7 @@ namespace Hospital.Services
                 Username = username,
                 Password = password,
                 Theme = "Dark",
-                Language = "SR"
+                Language = "ar"
             };
 
 

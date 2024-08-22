@@ -21,6 +21,7 @@ namespace Hospital.XAML.Pages
                 PhoneNumber = DoctorWindow.CurrentDoctor.Contact;
                 Surname = DoctorWindow.CurrentDoctor.Surname;
             }
+           
             else if (UserContext.CurrentUserType == UserType.MANAGER)
             {
                 Username = ManagerWindow.CurrentManager.Username;
@@ -28,6 +29,7 @@ namespace Hospital.XAML.Pages
                 PhoneNumber = ManagerWindow.CurrentManager.Contact;
                 Surname = ManagerWindow.CurrentManager.Surname;
             }
+           
             else
             {
                 Username = NurseWindow.CurrentNurse.Username;
@@ -48,28 +50,29 @@ namespace Hospital.XAML.Pages
             string value = typeItem.Content.ToString();
 
             // TODO: update in database
-            if (value == LangHelper.GetString("Serbian"))
+            if (value == LangHelper.GetString("Arabic"))
             {
-                LangHelper.SwitchLanguage("sr");
+                LangHelper.SwitchLanguage("ar");
 
                 if (UserContext.CurrentUserType == UserType.DOCTOR)
                 {
-                    DoctorWindow.CurrentDoctor.Language = "SR";
+                    DoctorWindow.CurrentDoctor.Language = "AR";
                     DoctorWindow.DoctorService.Update(DoctorWindow.CurrentDoctor);
                 }
                 else if (UserContext.CurrentUserType == UserType.MANAGER)
                 {
-                    ManagerWindow.CurrentManager.Language = "SR";
+                    ManagerWindow.CurrentManager.Language = "AR";
                     ManagerWindow.ManagerService.Update(ManagerWindow.CurrentManager);
                 }
                 else
                 {
-                    NurseWindow.CurrentNurse.Language = "SR";
+                    NurseWindow.CurrentNurse.Language = "AR";
                     NurseWindow.NurseService.Update(NurseWindow.CurrentNurse);
                 }
 
                 this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
             }
+           
             else if (value == LangHelper.GetString("English"))
             {
                 LangHelper.SwitchLanguage("en");
@@ -92,8 +95,71 @@ namespace Hospital.XAML.Pages
 
                 this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
             }
+
+            else if (value == LangHelper.GetString("FRANCE"))
+            {
+                LangHelper.SwitchLanguage("fr");
+
+                if (UserContext.CurrentUserType == UserType.DOCTOR)
+                {
+                    DoctorWindow.CurrentDoctor.Language = "FR";
+                    DoctorWindow.DoctorService.Update(DoctorWindow.CurrentDoctor);
+                }
+                else if (UserContext.CurrentUserType == UserType.MANAGER)
+                {
+                    ManagerWindow.CurrentManager.Language = "FR";
+                    ManagerWindow.ManagerService.Update(ManagerWindow.CurrentManager);
+                }
+                else
+                {
+                    NurseWindow.CurrentNurse.Language = "FR";
+                    NurseWindow.NurseService.Update(NurseWindow.CurrentNurse);
+                }
+
+                this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
+            }
+
             else throw new InvalidOperationException("Invalid language selection");
         }
+
+     
+        private void InitCheckBoxes()
+        {
+            if (LangHelper.CurrentLanguage == "en")
+            {
+                cb_lang.SelectedItem = cbi_lang_en;
+            }
+           
+            else if (LangHelper.CurrentLanguage == "ar")
+            {
+                cb_lang.SelectedItem = cbi_lang_ar;
+            }
+
+            else if (LangHelper.CurrentLanguage == "Fr")
+            {
+                cb_lang.SelectedItem = cbi_lang_FR;
+            }
+            else throw new InvalidOperationException("No such language");
+
+            if (AppTheme.CurrentTheme == "Light")
+            {
+                cb_theme.SelectedItem = cbi_theme_light;
+            }
+            else if (AppTheme.CurrentTheme == "Dark")
+            {
+                cb_theme.SelectedItem = cbi_theme_dark;
+            }
+            else if (AppTheme.CurrentTheme == "Green")
+            {
+                cb_theme.SelectedItem = cbi_theme_green;
+            }
+            else if (AppTheme.CurrentTheme == "Blue")
+            {
+                cb_theme.SelectedItem = cbi_theme_blue;
+            }
+            else throw new InvalidOperationException("No such theme");
+        }
+
 
         private void ThemeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -191,37 +257,6 @@ namespace Hospital.XAML.Pages
             }
 
             else throw new InvalidOperationException("Invalid theme selection");
-        }
-
-        private void InitCheckBoxes()
-        {
-            if (LangHelper.CurrentLanguage == "en")
-            {
-                cb_lang.SelectedItem = cbi_lang_en;
-            }
-            else if (LangHelper.CurrentLanguage == "sr")
-            {
-                cb_lang.SelectedItem = cbi_lang_sr;
-            }
-            else throw new InvalidOperationException("No such language");
-
-            if (AppTheme.CurrentTheme == "Light")
-            {
-                cb_theme.SelectedItem = cbi_theme_light;
-            }
-            else if (AppTheme.CurrentTheme == "Dark")
-            {
-                cb_theme.SelectedItem = cbi_theme_dark;
-            }
-            else if (AppTheme.CurrentTheme == "Green")
-            {
-                cb_theme.SelectedItem = cbi_theme_green;
-            }
-            else if (AppTheme.CurrentTheme == "Blue")
-            {
-                cb_theme.SelectedItem = cbi_theme_blue;
-            }
-            else throw new InvalidOperationException("No such theme");
         }
 
         private async void SaveBtn_Click(object sender, System.Windows.RoutedEventArgs e)

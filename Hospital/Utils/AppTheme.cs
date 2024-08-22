@@ -62,6 +62,8 @@ namespace Hospital.Utils
                 default:
                     throw new InvalidOperationException("Invalid theme");
             }
+          
+            #region Comment theme Dictionary Region
             //{
             //    var themeDictionary = new ResourceDictionary();
             //    switch (theme)
@@ -85,6 +87,9 @@ namespace Hospital.Utils
             //    Clear existing dictionaries and add new theme
             //    Application.Current.Resources.MergedDictionaries.Clear();
             //    Application.Current.Resources.MergedDictionaries.Add(themeDictionary);
+
+            #endregion
+        
         
         }
     }

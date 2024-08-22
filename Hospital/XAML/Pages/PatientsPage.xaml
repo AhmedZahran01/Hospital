@@ -18,7 +18,7 @@
                 <ResourceDictionary Source="../../Styles/TextBoxStyles.xaml"/>
                 <ResourceDictionary Source="../../Styles/TableStyles.xaml"/>
                 <ResourceDictionary Source="../../Language/Strings.en.xaml"/>
-                <ResourceDictionary Source="../../Language/Strings.sr.xaml"/>
+                <ResourceDictionary Source="../../Language/Strings.ar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
             <BooleanToVisibilityConverter x:Key="StringIsNullOrEmptyToVisibilityConverter" />

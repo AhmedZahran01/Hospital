@@ -18,6 +18,7 @@ namespace Hospital.Utils
             LanguageChanged?.Invoke(null, EventArgs.Empty);
         }
 
+        #region Comment Get String Region
         //public static string GetString(string name)
         //{
         //    foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
@@ -28,7 +29,8 @@ namespace Hospital.Utils
         //        }
         //    }
         //    throw new InvalidOperationException("Invalid key or theme not found");
-        //}
+        //} 
+        #endregion
 
         public static string GetString(string name) //LightTheme DarkTheme GreenTheme
         {
@@ -43,15 +45,23 @@ namespace Hospital.Utils
         {
             switch (language)
             {
-                case "SR":
-                case "sr":
-                    ResourceDictionary.Source = new Uri("../Language/Strings.sr.xaml", UriKind.Relative);
-                    CurrentLanguage = "sr";
+                case "AR":
+                case "ar":
+                    ResourceDictionary.Source = new Uri("../Language/Strings.ar.xaml", UriKind.Relative);
+                    CurrentLanguage = "ar";
                     break;
+              
                 case "EN":
                 case "en":
                     ResourceDictionary.Source = new Uri("../Language/Strings.en.xaml", UriKind.Relative);
                     CurrentLanguage = "en";
+                    break;
+
+
+                case "FR":
+                case "fr":
+                    ResourceDictionary.Source = new Uri("../Language/Strings.FR.xaml", UriKind.Relative);
+                    CurrentLanguage = "Fr";
                     break;
                 default:
                     throw new InvalidOperationException("Invalid language");

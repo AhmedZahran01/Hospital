@@ -6,7 +6,6 @@
     <system:String x:Key="ChangePassword">Change Password</system:String>
     <system:String x:Key="DarkTheme">Dark Theme</system:String>
     <system:String x:Key="Doctor">Doctor</system:String>
-    <system:String x:Key="English">English</system:String>
     <system:String x:Key="ErrorEmptyFields">Input fields cannot be empty!</system:String>
     <system:String x:Key="ErrorUsernameAlreadyExists">Username already exists! Choose another one.</system:String>
     <system:String x:Key="ErrorUpdated">Save failed!</system:String>
@@ -27,7 +26,6 @@
     <system:String x:Key="Register">Register</system:String>
     <system:String x:Key="RegisterTitle">REGISTER</system:String>
     <system:String x:Key="Save">Save</system:String>
-    <system:String x:Key="Serbian">Arabic</system:String>
     <system:String x:Key="SettingsSidebar">Settings</system:String>
     <system:String x:Key="SuccessNewRegistration">Successfully created new user!</system:String>
     <system:String x:Key="SuccessUpdated">Update successful!</system:String>
@@ -78,6 +76,10 @@
     <system:String x:Key="Addanewitem"> Add a new item </system:String>
     <system:String x:Key="DatesDetails">Dates Details</system:String>
     <system:String x:Key="error">There is an error here</system:String>
+   
+    <system:String x:Key="FRANCE">FRANCE</system:String>
+    <system:String x:Key="Arabic">Arabic</system:String>
+    <system:String x:Key="English">English</system:String>
 
 
 

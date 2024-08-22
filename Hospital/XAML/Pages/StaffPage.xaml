@@ -19,7 +19,7 @@
                 <ResourceDictionary Source="../../Styles/TextBoxStyles.xaml"/>
                 <ResourceDictionary Source="../../Styles/TableStyles.xaml"/>
                 <ResourceDictionary Source="../../Language/Strings.en.xaml"/>
-                <ResourceDictionary Source="../../Language/Strings.sr.xaml"/>
+                <ResourceDictionary Source="../../Language/Strings.ar.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <BooleanToVisibilityConverter x:Key="BoolToVis" />
             <BooleanToVisibilityConverter x:Key="StringIsNullOrEmptyToVisibilityConverter" />
@@ -54,11 +54,11 @@
         <!--Tab buttons-->
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
             <Button x:Name="ManagerButton" Style="{StaticResource tabButton}" Content="{DynamicResource Managers}"  Click="ManagerButton_Click"/>
-            <Button x:Name="DoctorButton" Style="{StaticResource tabButton}"  Content="{DynamicResource Doctors}"   Click="DoctorButton_Click"/>
-            <Button x:Name="NurseButton" Style="{StaticResource tabButton}"   Content="{DynamicResource Nurses}"    Click="NurseButton_Click"/>
+            <Button x:Name="DoctorButton"  Style="{StaticResource tabButton}"  Content="{DynamicResource Doctors}"   Click="DoctorButton_Click"/>
+            <Button x:Name="NurseButton"   Style="{StaticResource tabButton}"   Content="{DynamicResource Nurses}"    Click="NurseButton_Click"/>
         </StackPanel>
 
-        <TextBlock x:Name="title_left" Text="Managers" Grid.Row="4" FontSize="26" FontWeight="SemiBold" Margin="20, 0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="title_left" Text="{DynamicResource Managers}" Grid.Row="4" FontSize="26" FontWeight="SemiBold" Margin="20, 0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock Text="{DynamicResource Search}" Grid.Row="4" FontSize="18" FontWeight="SemiBold" Margin="0 0 215 0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
 
         <!--Filter Textbox-->
