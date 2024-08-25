@@ -19,18 +19,18 @@ namespace Hospital.Migrations
                 .HasAnnotation("ProductVersion", "6.0.24")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Hospital.DataObjects.Admissions", b =>
+            modelBuilder.Entity("Hospital.DataObjects.Admission", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("EntryDate")
+                    b.Property<DateTime>("AdmissionDate")
                         .HasColumnType("datetime")
                         .HasColumnName("admission_date");
 
-                    b.Property<DateTime>("ExitDate")
+                    b.Property<DateTime>("DischargeDate")
                         .HasColumnType("datetime")
                         .HasColumnName("discharge_date");
 
@@ -45,7 +45,7 @@ namespace Hospital.Migrations
                     b.ToTable("admission", (string)null);
                 });
 
-            modelBuilder.Entity("Hospital.DataObjects.Appointments", b =>
+            modelBuilder.Entity("Hospital.DataObjects.Appointment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -375,7 +375,7 @@ namespace Hospital.Migrations
                     b.ToTable("surgery", (string)null);
                 });
 
-            modelBuilder.Entity("Hospital.DataObjects.Admissions", b =>
+            modelBuilder.Entity("Hospital.DataObjects.Admission", b =>
                 {
                     b.HasOne("Hospital.DataObjects.Patient", "Patient")
                         .WithMany("Admissions")
@@ -386,7 +386,7 @@ namespace Hospital.Migrations
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("Hospital.DataObjects.Appointments", b =>
+            modelBuilder.Entity("Hospital.DataObjects.Appointment", b =>
                 {
                     b.HasOne("Hospital.DataObjects.Doctor", "Doctor")
                         .WithMany("Appointments")
