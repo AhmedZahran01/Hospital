@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Scaffold;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ namespace Hospital.DataObjects
 
         public Patient()
         {
-            Admissions = new HashSet<Admissions>();
+            Admissions = new HashSet<Admission>();
             Appointments = new HashSet<Appointments>();
             Records = new HashSet<Record>();
             Surgeries = new HashSet<Surgery>();
@@ -98,7 +99,7 @@ namespace Hospital.DataObjects
         }
 
 
-        public virtual ICollection<Admissions> Admissions { get; set; }
+        public virtual ICollection<Admission> Admissions { get; set; }
         public virtual ICollection<Appointments> Appointments { get; set; }
         public virtual ICollection<Record> Records { get; set; }
         public virtual ICollection<Surgery> Surgeries { get; set; }

@@ -1,5 +1,6 @@
 ﻿using Hospital.DataObjects;
 using Microsoft.EntityFrameworkCore;
+using Om_El_Masryeen_Hospital.Repositories.Repo_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,42 +12,46 @@ namespace Hospital.Services
 {
     public class DoctorService
     {
-        private hospitalContext _context;
+      
+        private readonly IDoctorRepo doctor;
 
         public DoctorService()
         {
-            _context = new();
+            
+        }
+        public DoctorService(IDoctorRepo doctor )
+        {
+            this.doctor = doctor;
         }
 
         public IEnumerable<Doctor> GetAll()
         {
-            return _context.Doctors.ToList();
+            return   doctor.GetAll();
         }
 
         public async Task<Doctor> GetByIdAsync(int id)
         {
-            return await _context.Doctors.FirstOrDefaultAsync(x => x.Id == id);
+            return await doctor.GetByIdAsync(id);
         }
 
         public Doctor GetById(int id)
         {
-            return _context.Doctors.FirstOrDefault(x => x.Id == id);
+            return  doctor.GetById(id);
         }
 
-        public async Task<bool> Update(Doctor doctor)
+        public async Task<bool> Update(Doctor doctoraws)
         {
-            if (doctor == null)
+            if (doctoraws == null)
             {
                 return false;
             }
 
             try
             {
-                _context.Doctors.Update(doctor);
-
-                await _context.SaveChangesAsync();
+                doctor.Update(doctoraws);
                 return true;
-            } catch (Exception ex)
+            } 
+            catch (Exception ex)
             {
                 Trace.WriteLine(ex.Message);
                 return false;
@@ -55,12 +60,11 @@ namespace Hospital.Services
 
         public void Delete(int id)
         {
-            var toDelete = _context.Doctors.Find(id);
+            var toDelete = doctor.GetById(id);
 
             if (toDelete != null)
             {
-                _context.Doctors.Remove(toDelete);
-                _context.SaveChanges();
+                doctor.Delete(toDelete);
             }
         }
     }

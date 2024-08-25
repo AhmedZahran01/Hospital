@@ -8,5 +8,6 @@ namespace Hospital
     public partial class App : Application
     {
 
+
     }
 }

@@ -22,7 +22,7 @@ namespace Hospital.XAML.CreateWindows
     {
         private RecordsService RecordsService = new();
         private PatientService PatientService = new();
-        private DoctorService DoctorService = new();
+        private DoctorService DoctorService  ;
         private Record? Record = null;
         public CreateRecordWindow()
         {

@@ -25,7 +25,7 @@ namespace Hospital.XAML.CreateWindows
     {
         private SurgeriesService SurgeriesService = new();
         private PatientService PatientService = new();
-        private DoctorService DoctorService = new();
+        private DoctorService DoctorService;
         private Surgery? Surgery = null;
         public CreateSurgeryWindow()
         {

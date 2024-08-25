@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using Hospital.DataObjects;
 using System.Diagnostics;
 using Hospital.Services;
+using Om_El_Masryeen_Hospital.Repositories.Repo_Interfaces;
 
 namespace Hospital.XAML
 {
@@ -18,8 +19,9 @@ namespace Hospital.XAML
         public static DoctorService DoctorService;
         public DoctorWindow(Doctor loggedIn)
         {
+            DoctorService sds = new DoctorService();
             CurrentDoctor = loggedIn;
-            DoctorService = new();
+            DoctorService =   sds;
 
             InitializeComponent();
             DataContext = this;

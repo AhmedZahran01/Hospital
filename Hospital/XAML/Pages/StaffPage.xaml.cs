@@ -1,6 +1,7 @@
 ﻿using Hospital.DataObjects;
 using Hospital.Services;
 using Hospital.Utils;
+using Om_El_Masryeen_Hospital.Repositories.Repo_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +26,7 @@ namespace Hospital.XAML.Pages
     /// </summary>
     public partial class StaffPage : Page
     {
-        private DoctorService _doctorService = new();
+        private DoctorService _doctorService  ;
         private ManagerService _managerService = new();
         private NurseService _nurseService = new NurseService();
 
