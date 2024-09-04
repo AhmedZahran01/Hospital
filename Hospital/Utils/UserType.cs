@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hospital.Utils
+namespace Hospital
 {
     public enum UserType
     {

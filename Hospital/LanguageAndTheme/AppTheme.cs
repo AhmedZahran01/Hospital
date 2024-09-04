@@ -16,6 +16,7 @@ namespace Hospital.Utils
 
             App.Current.Resources.Clear();
             App.Current.Resources.MergedDictionaries.Add(Theme);
+       
         }
 
         public static void ChangeThemeToLight()

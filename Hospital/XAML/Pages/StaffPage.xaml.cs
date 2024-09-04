@@ -26,18 +26,21 @@ namespace Hospital.XAML.Pages
     /// </summary>
     public partial class StaffPage : Page
     {
-        private DoctorService _doctorService  ;
+        //private DoctorService _doctorService  ;
         private ManagerService _managerService = new();
         private NurseService _nurseService = new NurseService();
 
         private UserType SelectedWindow = UserType.MANAGER;
-        public StaffPage()
+        private readonly IDoctorRepo _doctorService;
+
+        public StaffPage(IDoctorRepo doctorRepo)
         {
             InitializeComponent();
             DataContext = this;
             this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
 
             UpdateTable();
+            this._doctorService = doctorRepo;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

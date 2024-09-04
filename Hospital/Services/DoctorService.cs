@@ -64,7 +64,7 @@ namespace Hospital.Services
 
             if (toDelete != null)
             {
-                doctor.Delete(toDelete);
+                doctor.Delete(id);
             }
         }
     }

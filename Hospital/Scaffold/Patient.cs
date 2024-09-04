@@ -8,7 +8,7 @@ namespace Hospital.Scaffold
     {
         public Patient()
         {
-            Admissions = new HashSet<Admission>();
+            Admissions = new HashSet<Admissions>();
             Appointments = new HashSet<Appointment>();
             Records = new HashSet<Record>();
             Surgeries = new HashSet<Surgery>();
@@ -21,7 +21,7 @@ namespace Hospital.Scaffold
         public string      Address    { get; set; } = null!;
         public DateTime    BirthDate  { get; set; }
 
-        public virtual ICollection<Admission> Admissions { get; set; }
+        public virtual ICollection<Admissions> Admissions { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
         public virtual ICollection<Record> Records { get; set; }
         public virtual ICollection<Surgery> Surgeries { get; set; }

@@ -75,7 +75,7 @@ namespace Hospital.DataObjects
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admissions>(entity =>
+            modelBuilder.Entity<DataObjects.Admissions>(entity =>
             {
                 entity.ToTable("admission");
 
@@ -93,11 +93,11 @@ namespace Hospital.DataObjects
 
                 entity.Property(e => e.PatientId).HasColumnName("Patient_id");
 
-                //entity.HasOne(d => d.Patient)
-                //    .WithMany(p => p.Admissions)
-                //    .HasForeignKey(d => d.PatientId)
-                //    .OnDelete(DeleteBehavior.ClientSetNull)
-                //    .HasConstraintName("fk_Admission_Patient1");
+                entity.HasOne(d => d.Patient)
+                    .WithMany(p => p.Admissions)
+                    .HasForeignKey(d => d.PatientId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_Admission_Patient1");
             });
 
             modelBuilder.Entity<Appointments>(entity =>

@@ -36,9 +36,9 @@ namespace Om_El_Masryeen_Hospital.Repositories.Repo_Classes
             hospitalContextss.SaveChanges();
         }
 
-        public int Delete(T order)
+        public int Delete(V orderid)
         {
-            hospitalContextss.Remove(order);
+            hospitalContextss.Remove(orderid);
             return hospitalContextss.SaveChanges();
         }
 

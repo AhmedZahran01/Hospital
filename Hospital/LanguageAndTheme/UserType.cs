@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hospital.Utils
 {
-    public enum UserType
+    public enum UserTypem
     {
         MANAGER,
         DOCTOR,

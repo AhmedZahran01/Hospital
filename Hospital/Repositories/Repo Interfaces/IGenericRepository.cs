@@ -16,7 +16,7 @@ namespace Om_El_Masryeen_Hospital.Repositories.Repo_Interfaces
 
         void Update(T customer);
 
-        int Delete(T customer);
+        int Delete(v customerid);
 
     }
 }

@@ -12,7 +12,7 @@ namespace Hospital.DataObjects
 
         public Patient()
         {
-            Admissions = new HashSet<Admission>();
+            Admissions = new HashSet<  Admissions>();
             Appointments = new HashSet<Appointments>();
             Records = new HashSet<Record>();
             Surgeries = new HashSet<Surgery>();
@@ -99,7 +99,7 @@ namespace Hospital.DataObjects
         }
 
 
-        public virtual ICollection<Admission> Admissions { get; set; }
+        public virtual ICollection<  Admissions> Admissions { get; set; }
         public virtual ICollection<Appointments> Appointments { get; set; }
         public virtual ICollection<Record> Records { get; set; }
         public virtual ICollection<Surgery> Surgeries { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Hospital.Scaffold
 {
-    public partial class Admission
+    public partial class Admissionss
     {
         public int                Id               { get; set; }
         public DateTime          AdmissionDate     { get; set; }

@@ -22,6 +22,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using Om_El_Masryeen_Hospital.Repositories.Repo_Interfaces;
 
 namespace Hospital.XAML
 {
@@ -41,13 +42,13 @@ namespace Hospital.XAML
             DataContext = this;
             this.Resources.MergedDictionaries.Add(LangHelper.GetResourceDictionary());
         }
-
+        IDoctorRepo doctor;
         private void MouseClickDoctors(object sender, MouseButtonEventArgs e)
         {
             HideWelcomeMessage();
             InitSidebarColors();
             doctorsTextBlock.SetResourceReference(Control.StyleProperty, "SidebarSelectedTextBlock");
-            MainPage.Content = new StaffPage();
+            MainPage.Content = new StaffPage( doctor);
         }
 
       #region MyRegion
