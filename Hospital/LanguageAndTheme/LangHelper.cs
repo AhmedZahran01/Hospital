@@ -18,21 +18,8 @@ namespace Hospital.Utils
             LanguageChanged?.Invoke(null, EventArgs.Empty);
         }
 
-        #region Comment Get String Region
-        //public static string GetString(string name)
-        //{
-        //    foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
-        //    {
-        //        if (dictionary.Contains(name))
-        //        {
-        //            return dictionary[name] as string;
-        //        }
-        //    }
-        //    throw new InvalidOperationException("Invalid key or theme not found");
-        //} 
-        #endregion
-
-        public static string GetString(string name) //LightTheme DarkTheme GreenTheme
+     
+        public static string GetString(string name) //LightTheme DarkTheme GreenTheme BlueTheme
         {
             if (ResourceDictionary.Contains(name))
             {
@@ -73,5 +60,25 @@ namespace Hospital.Utils
         {
             return ResourceDictionary;
         }
+
+
+
+
+
+
+        #region Comment Get String Region
+        //public static string GetString(string name)
+        //{
+        //    foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
+        //    {
+        //        if (dictionary.Contains(name))
+        //        {
+        //            return dictionary[name] as string;
+        //        }
+        //    }
+        //    throw new InvalidOperationException("Invalid key or theme not found");
+        //} 
+        #endregion
+
     }
 }

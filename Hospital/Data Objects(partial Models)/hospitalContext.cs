@@ -47,7 +47,7 @@ namespace Hospital.DataObjects
                 optionsBuilder.UseMySQL
                  ("server=localhost;database=hospital;uid=root;pwd=new_password;");
 
-
+         //        "server=localhost;database=hospital;uid=root;pwd=new_password;"
 
                 #region Comment For Sql Server Provider
 
