@@ -12,5 +12,6 @@ namespace Hospital.Scaffold
 
         public virtual Doctor   DoctorIdDoctorNavigation      { get; set; } = null!;
         public virtual Patient  PatientIdPatientNavigation    { get; set; } = null!;
+
     }
 }

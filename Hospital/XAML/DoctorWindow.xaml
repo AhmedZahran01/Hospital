@@ -61,5 +61,5 @@
                 Style="{StaticResource LogoutButtonStyle}"/>
         
         <Frame Grid.Column="1" x:Name="MainPage" NavigationUIVisibility="Hidden"/>
-    </Grid>
+    </Grid> 
 </Window>

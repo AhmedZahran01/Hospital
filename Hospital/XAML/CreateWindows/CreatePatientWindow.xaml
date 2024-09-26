@@ -12,7 +12,7 @@
         FontFamily="{DynamicResource MainFont}"
         WindowStartupLocation="CenterScreen"
         >
-
+ 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

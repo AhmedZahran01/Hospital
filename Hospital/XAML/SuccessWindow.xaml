@@ -20,7 +20,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
+     
     <Grid Background="{DynamicResource BackgroundColor}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
             <Image Source="/Assets/checked.png" Width="30" Height="30" Margin="0,20,0,20"/>

@@ -24,7 +24,7 @@ namespace Hospital.DataObjects
 
 
 
-        private int doctorId;
+        private int doctorId;  
         public int DoctorId
         {
             get { return doctorId; }
